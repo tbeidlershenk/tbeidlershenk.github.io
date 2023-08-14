@@ -1,49 +1,40 @@
 name: Deploy to GitHub Pages
 
 on:
+  workflow_dispatch:
   push:
-    # Update branch according from where you will be pushing the code
-    branches: [ main ]
+    branches:
+      - master
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    env:
-      my_secret: ${{secrets.ACCESS_TOKEN}}
-
+  deploy:
+    runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2
+      - uses: actions/checkout@v2
+
+      - uses: subosito/flutter-action@v1
         with:
-          channel: 'stable'
+          flutter-version: '1.19.x' 
+          channel: 'beta' # Required for web
 
-      - run: flutter clean
-      - run: flutter pub get
-      - run: flutter build web --release
+      - name: Enable Flutter Web
+        run: flutter config --enable-web
 
-      # Web deploy now is contained in build/web directory
-      - run: |
-          cd build
-          mkdir web-deploy
-          cd web-deploy
-          #! Update with your Email ID associated with GitHub
-          git config --global user.email github-actions[bot]@users.noreply.github.com
-          #! Update with your username associated with GitHub
-          git config --global user.name github-actions[bot]
-          git config --global init.defaultBranch main
-          git init
-          # the repository to push the deploy into
-          #! Update the following with your username and repository
-          git remote add origin https://${{secrets.ACCESS_TOKEN}}@github.com/jeffzheng13/jeffzheng13.github.io.git
-          git fetch origin gh-pages
-          git switch gh-pages
-          # copy the build that is there in ROOT/build/web into ROOT/build/web-deploy
-          cp -R ../web/* .
-          git status
-          git add .
-          # add commit of the previous commit from main
-          echo ""
-          echo "Committing to gh-pages: ${{ github.event.head_commit.message }}"
+      - name: Download Dependencies
+        run: flutter pub get
+
+      - name: Build
+        run: flutter build web
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
+          force_orphan: true
+          user_name: 'github-ci[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Publish to gh-pages'es: ${{ github.event.head_commit.message }}"
           echo ""
           git commit -m "${{ github.event.head_commit.message }}"
           git push origin gh-pages
