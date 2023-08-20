@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:personal_website/sections/links.dart';
 import 'package:personal_website/sections/mainHeader.dart';
 import 'package:personal_website/sections/portfolio.dart';
+import 'package:personal_website/sections/work.dart';
 import 'package:personal_website/widgets/toolbar.dart';
 import 'appcolorscheme.dart';
 import 'sections/intro.dart';
@@ -19,8 +20,8 @@ class App extends StatefulWidget {
   @override
   AppState createState() => AppState();
 
-  static AppState of(BuildContext context) => 
-    context.findAncestorStateOfType<AppState>()!;
+  static AppState of(BuildContext context) =>
+      context.findAncestorStateOfType<AppState>()!;
 }
 
 class AppState extends State<App> {
@@ -29,7 +30,7 @@ class AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Personal Website',
+      title: 'Tobias Beidler-Shenk | CS Student',
       theme: ThemeData(
         colorScheme: const ColorScheme.light(),
       ),
@@ -45,9 +46,8 @@ class AppState extends State<App> {
   // Change the theme
   void changeTheme() {
     setState(() {
-      themeMode = themeMode == ThemeMode.light
-        ? ThemeMode.dark
-        : ThemeMode.light;
+      themeMode =
+          themeMode == ThemeMode.light ? ThemeMode.dark : ThemeMode.light;
     });
   }
 }
@@ -62,34 +62,54 @@ class MainPage extends StatefulWidget {
 }
 
 class MainPageState extends State<MainPage> {
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Stack(
-      children: [
-        Center(
-          child: SingleChildScrollView(child: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
+    double dividerIndent = (MediaQuery.of(context).size.width / 2.5);
+    return Scaffold(
+        body: Stack(children: [
+      Center(
+          child: SingleChildScrollView(
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
                 repeat: ImageRepeat.repeat,
                 opacity: 0.25,
                 image: Theme.of(context).colorScheme.backgroundImage),
-              ),
-              child: Column(children: const <Widget>[
-                MainHeader(),
-                Divider(thickness: 3, indent: 200, endIndent: 200),
-                Intro(),
-                Divider(thickness: 3, indent: 200, endIndent: 200),
-                SizedBox(height: 20),
-                Portfolio(),
-                Divider(thickness: 3, indent: 200, endIndent: 200),
-                Links()
-              ],
-            ),
-              ),
-        )),
-        const Align(alignment: Alignment.topLeft, child: Toolbar())
-      ]
-    ));
+          ),
+          child: Column(
+            children: <Widget>[
+              MainHeader(),
+              Divider(
+                  thickness: 3,
+                  indent: dividerIndent,
+                  endIndent: dividerIndent),
+              SizedBox(height: 20),
+              Intro(),
+              SizedBox(height: 20),
+              Divider(
+                  thickness: 3,
+                  indent: dividerIndent,
+                  endIndent: dividerIndent),
+              SizedBox(height: 20),
+              Portfolio(),
+              SizedBox(height: 20),
+              Divider(
+                  thickness: 3,
+                  indent: dividerIndent,
+                  endIndent: dividerIndent),
+              SizedBox(height: 20),
+              Work(),
+              SizedBox(height: 20),
+              Divider(
+                  thickness: 3,
+                  indent: dividerIndent,
+                  endIndent: dividerIndent),
+              Links()
+            ],
+          ),
+        ),
+      )),
+      const Align(alignment: Alignment.topLeft, child: Toolbar())
+    ]));
   }
 }
