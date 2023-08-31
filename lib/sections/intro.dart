@@ -79,7 +79,7 @@ class _IntroState extends State<Intro> {
               style: style)),
     ];
     return SizedBox(
-      height: 920,
+      height: 1000,
       width: 0.6 * MediaQuery.of(context).size.width,
       child: MasonryGridView.builder(
         itemCount: blocks.length,
