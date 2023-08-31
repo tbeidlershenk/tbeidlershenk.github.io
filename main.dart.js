@@ -21242,7 +21242,7 @@ $1(a){var s=$.bz
 s=(s==null?$.bz=A.dD(self.window.flutterConfiguration):s).b
 if(s==null)s=null
 else{s=s.canvasKitBaseUrl
-if(s==null)s=null}return(s==null?"https://www.gstatic.com/flutter-canvaskit/1ac611c64eadbd93c5f5aba5494b8fc3b35ee952/":s)+a},
+if(s==null)s=null}return(s==null?"https://www.gstatic.com/flutter-canvaskit/b20183e04096094bcc37d9cde2a4b96f5cc684cf/":s)+a},
 $S:51}
 A.a6e.prototype={
 $1(a){this.a.remove()
@@ -62352,7 +62352,7 @@ s=A.a([new A.kk(p,r),new A.np("assets/images/headshot.jpg",r),new A.kk(o,r),new 
 k=A.cJ(a,r,t.w).w
 p=!0
 p=p?B.vy:r
-return A.d9(new A.Ct(B.x_,new A.a_1(new A.a3a(s),8,!0,!0,!0),r,B.X,!1,r,r,p,!1,r,8,B.b6,B.Fe,r,B.av,r),910,0.6*k.a.a)}}
+return A.d9(new A.Ct(B.x_,new A.a_1(new A.a3a(s),8,!0,!0,!0),r,B.X,!1,r,r,p,!1,r,8,B.b6,B.Fe,r,B.av,r),920,0.6*k.a.a)}}
 A.a39.prototype={
 $0(){return A.pJ("https://drive.google.com/file/d/1UCC9sQ0SIjUE2FOMOi7JFhVbyWfubtxp/view")},
 $S:0}
