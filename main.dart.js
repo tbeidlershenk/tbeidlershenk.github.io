@@ -62352,7 +62352,7 @@ s=A.a([new A.kk(p,r),new A.np("assets/images/headshot.jpg",r),new A.kk(o,r),new 
 k=A.cJ(a,r,t.w).w
 p=!0
 p=p?B.vy:r
-return A.d9(new A.Ct(B.x_,new A.a_1(new A.a3a(s),8,!0,!0,!0),r,B.X,!1,r,r,p,!1,r,8,B.b6,B.Fe,r,B.av,r),920,0.6*k.a.a)}}
+return A.d9(new A.Ct(B.x_,new A.a_1(new A.a3a(s),8,!0,!0,!0),r,B.X,!1,r,r,p,!1,r,8,B.b6,B.Fe,r,B.av,r),1000,0.6*k.a.a)}}
 A.a39.prototype={
 $0(){return A.pJ("https://drive.google.com/file/d/1UCC9sQ0SIjUE2FOMOi7JFhVbyWfubtxp/view")},
 $S:0}
