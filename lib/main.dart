@@ -4,6 +4,7 @@ import 'package:personal_website/sections/mainHeader.dart';
 import 'package:personal_website/sections/portfolio.dart';
 import 'package:personal_website/sections/work.dart';
 import 'package:personal_website/widgets/toolbar.dart';
+import 'package:flutter_polls/flutter_polls.dart';
 import 'appcolorscheme.dart';
 import 'sections/intro.dart';
 
@@ -109,7 +110,22 @@ class MainPageState extends State<MainPage> {
           ),
         ),
       )),
-      const Align(alignment: Alignment.topLeft, child: Toolbar())
+      const Align(alignment: Alignment.topLeft, child: Toolbar()),
+      // Align(
+      //   alignment: Alignment.bottomRight,
+      //   child: Padding(
+      //     padding: const EdgeInsets.all(10.0),
+      //     child: SizedBox(
+      //       width: MediaQuery.of(context).size.width * 0.1,
+      //       height: MediaQuery.of(context).size.height * 0.2,
+      //       child: FlutterPolls(
+      //         onVoted: (PollOption pollOption, int newTotalVotes) => handlePollVote(pollOption, newTotalVotes), 
+      //         pollId: '', 
+      //         pollOptions: [PollOption(title: Text("Option 1"), votes: 0), PollOption(title: Text("Option 2"), votes: 0)], 
+      //         pollTitle: Text(""),)),
+      //   ),
+      // )
+        
     ]));
   }
 }

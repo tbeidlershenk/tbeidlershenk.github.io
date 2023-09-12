@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:personal_website/appcolorscheme.dart';
 
+/// Creates a card for a timeline
 class TimelineCard extends StatelessWidget {
+  
   const TimelineCard(
       {super.key,
       required this.link,
@@ -29,7 +31,7 @@ class TimelineCard extends StatelessWidget {
             width: size,
             height: size,
             decoration: BoxDecoration(
-                border: Border.all(width: 3, color: Colors.black),
+                border: Border.all(width: 3, color: Theme.of(context).colorScheme.cardBorderColor),
                 borderRadius: const BorderRadius.all(Radius.circular(5)),
                 shape: BoxShape.rectangle,
                 image: DecorationImage(
@@ -39,17 +41,17 @@ class TimelineCard extends StatelessWidget {
     }
     return Container(
         decoration: BoxDecoration(
-            border: Border.all(width: 3, color: Colors.black),
-            borderRadius: const BorderRadius.all(Radius.circular(10)),
-            gradient: LinearGradient(
-                colors: [
-                  Theme.of(context).colorScheme.portfolioCardPrimaryColor,
-                  Theme.of(context).colorScheme.portfolioCardSecondaryColor
-                ],
-                begin: const FractionalOffset(0.0, 0.0),
-                end: const FractionalOffset(1.0, 0.0),
-                stops: [0.0, 1.0],
-                tileMode: TileMode.clamp)),
+          border: Border.all(color: Theme.of(context).colorScheme.cardBorderColor, width: 3),
+          gradient: LinearGradient(
+            colors: [
+              Theme.of(context).colorScheme.cardPrimaryColor,
+              Theme.of(context).colorScheme.cardSecondaryColor],
+            begin: const FractionalOffset(0.0, 0.0),
+            end: const FractionalOffset(1.0, 0.0),
+            stops: const [0.0, 1.0],
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(3))
+        ),
         child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
@@ -71,8 +73,7 @@ class TimelineCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Expanded(
-                            child: Text(text,
-                                style: const TextStyle(color: Colors.black)),
+                            child: RichText(text: createStylizedTextWidget(text))
                           ),
                           SizedBox(
                             width: 110,
@@ -84,5 +85,22 @@ class TimelineCard extends StatelessWidget {
                         ]),
                   ]),
             )));
+  }
+
+  /// Parse text to bold keywords
+  /// Return TextSpan with bolded sections
+  TextSpan createStylizedTextWidget(String text) {
+    List<TextSpan> fullText = <TextSpan>[];
+    List<String> boldText = text.split("**");
+    bool bold = false;
+    for (String s in boldText) {
+      fullText.add(TextSpan(text: s, style: bold 
+        ? const TextStyle(fontWeight: FontWeight.bold) 
+        : const TextStyle(fontWeight: FontWeight.normal)));
+      bold = !bold;
+    }
+    return TextSpan(
+      children: fullText
+    );
   }
 }
