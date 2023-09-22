@@ -27,8 +27,8 @@ class _LinksState extends State<Links> {
                 launchUrlString("https://www.linkedin.com/in/tobias-beidler-shenk-681406221/");
               }),
               IconButton(icon: const FaIcon(Icons.description), onPressed: () {
-                launchUrlString("https://drive.google.com/file/d/1UCC9sQ0SIjUE2FOMOi7JFhVbyWfubtxp/view?usp=sharing");
-              })
+                launchUrlString("https://flowcv.com/resume/qsqv6o0el5");
+              }),
             ],)
       ),
     );

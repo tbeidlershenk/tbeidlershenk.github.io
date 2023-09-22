@@ -40,8 +40,9 @@ class TimelineCard extends StatelessWidget {
       size *= 0.7;
     }
     return Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: Theme.of(context).colorScheme.cardBorderColor, width: 3),
+      padding: EdgeInsets.all(5),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(4)),
           gradient: LinearGradient(
             colors: [
               Theme.of(context).colorScheme.cardPrimaryColor,
@@ -50,41 +51,54 @@ class TimelineCard extends StatelessWidget {
             end: const FractionalOffset(1.0, 0.0),
             stops: const [0.0, 1.0],
           ),
-          borderRadius: BorderRadius.all(Radius.circular(3))
         ),
-        child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SizedBox(
-              width: 400,
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(title,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.black)),
-                    Expanded(
-                      child: Text(subtitle,
+      child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Theme.of(context).colorScheme.cardBorderColor, width: 2),
+            gradient: LinearGradient(
+              colors: [
+                Theme.of(context).colorScheme.cardPrimaryColor,
+                Theme.of(context).colorScheme.cardSecondaryColor],
+              begin: const FractionalOffset(0.0, 0.0),
+              end: const FractionalOffset(1.0, 0.0),
+              stops: const [0.0, 1.0],
+            ),
+            borderRadius: BorderRadius.all(Radius.circular(3))
+          ),
+          child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                width: 400,
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(title,
                           style: const TextStyle(
-                              fontStyle: FontStyle.italic,
-                              color: Colors.black)),
-                    ),
-                    const Divider(),
-                    Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: RichText(text: createStylizedTextWidget(text))
-                          ),
-                          SizedBox(
-                            width: 110,
-                            child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: displayImages),
-                          )
-                        ]),
-                  ]),
-            )));
+                              fontWeight: FontWeight.bold, color: Colors.black)),
+                      Expanded(
+                        child: Text(subtitle,
+                            style: const TextStyle(
+                                fontStyle: FontStyle.italic,
+                                color: Colors.black)),
+                      ),
+                      const Divider(),
+                      Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: RichText(text: createStylizedTextWidget(text))
+                            ),
+                            SizedBox(
+                              width: 110,
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: displayImages),
+                            )
+                          ]),
+                    ]),
+              ))),
+    );
   }
 
   /// Parse text to bold keywords

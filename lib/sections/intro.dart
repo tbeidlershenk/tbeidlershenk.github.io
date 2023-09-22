@@ -47,7 +47,7 @@ class _IntroState extends State<Intro> {
             color: Colors.blue,
           ),
           recognizer: TapGestureRecognizer()
-            ..onTap = () => launchUrlString('https://drive.google.com/file/d/1UCC9sQ0SIjUE2FOMOi7JFhVbyWfubtxp/view'),
+            ..onTap = () => launchUrlString('https://flowcv.com/resume/qsqv6o0el5'),
         ),
       ], style: style)),
       const ImageBlock(path: "assets/images/theboysatknob.jpeg"),
