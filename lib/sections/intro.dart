@@ -33,7 +33,7 @@ class _IntroState extends State<Intro> {
   @override
   Widget build(BuildContext context) => getIntroBody(context);
 
-  SizedBox getIntroBody(BuildContext context) {
+  Widget getIntroBody(BuildContext context) {
     TextStyle style =
         GoogleFonts.robotoCondensed(fontSize: 20, color: Colors.black);
     List<Widget> blocks = [
@@ -78,10 +78,14 @@ class _IntroState extends State<Intro> {
                   "Feel free to check out my projects & links below, and don't hesitate to reach out 🙂",
               style: style)),
     ];
-    return SizedBox(
-      height: 910,
-      width: 0.6 * MediaQuery.of(context).size.width,
+    return Container(
+      constraints: BoxConstraints(
+          maxHeight: 2000,
+          maxWidth: 0.6 * MediaQuery.of(context).size.width,
+          minWidth: 0.6 * MediaQuery.of(context).size.width),
       child: MasonryGridView.builder(
+        shrinkWrap: true,
+        physics: ClampingScrollPhysics(),
         itemCount: blocks.length,
         gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2),
