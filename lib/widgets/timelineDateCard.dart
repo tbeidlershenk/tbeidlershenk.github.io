@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import '../appcolorscheme.dart';
 
 /// Creates a Text block for intro section
-class TextBlock extends StatelessWidget {  
-  const TextBlock({
+class TimelineDateCard extends StatelessWidget {  
+  const TimelineDateCard({
     super.key,
     required this.text,
   });
-  final TextSpan text;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -26,20 +26,11 @@ class TextBlock extends StatelessWidget {
         ),
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(color: Theme.of(context).colorScheme.cardBorderColor, width: 2),
-          gradient: LinearGradient(
-            colors: [
-              Theme.of(context).colorScheme.cardPrimaryColor,
-              Theme.of(context).colorScheme.cardSecondaryColor],
-            begin: const FractionalOffset(0.0, 0.0),
-            end: const FractionalOffset(1.0, 0.0),
-            stops: const [0.0, 1.0],
-          ),
-          borderRadius: BorderRadius.all(Radius.circular(3))
+          borderRadius: BorderRadius.all(Radius.circular(4)),
+          border: Border.all(width: 2, color: Theme.of(context).colorScheme.cardBorderColor),
         ),
-        width: double.infinity, 
         padding: const EdgeInsets.all(5),
-        child: RichText(text: text)),
+        child: Text(text, style: TextStyle(fontWeight: FontWeight.bold,))),
     );
   }
 }

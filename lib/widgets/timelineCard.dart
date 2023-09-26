@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:personal_website/appcolorscheme.dart';
 
+/// Creates a card for a timeline
 class TimelineCard extends StatelessWidget {
+  
   const TimelineCard(
       {super.key,
       required this.link,
@@ -29,7 +31,7 @@ class TimelineCard extends StatelessWidget {
             width: size,
             height: size,
             decoration: BoxDecoration(
-                border: Border.all(width: 3, color: Colors.black),
+                border: Border.all(width: 3, color: Theme.of(context).colorScheme.cardBorderColor),
                 borderRadius: const BorderRadius.all(Radius.circular(5)),
                 shape: BoxShape.rectangle,
                 image: DecorationImage(
@@ -38,51 +40,81 @@ class TimelineCard extends StatelessWidget {
       size *= 0.7;
     }
     return Container(
-        decoration: BoxDecoration(
-            border: Border.all(width: 3, color: Colors.black),
-            borderRadius: const BorderRadius.all(Radius.circular(10)),
+      padding: EdgeInsets.all(5),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(4)),
+          gradient: LinearGradient(
+            colors: [
+              Theme.of(context).colorScheme.cardPrimaryColor,
+              Theme.of(context).colorScheme.cardSecondaryColor],
+            begin: const FractionalOffset(0.0, 0.0),
+            end: const FractionalOffset(1.0, 0.0),
+            stops: const [0.0, 1.0],
+          ),
+        ),
+      child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Theme.of(context).colorScheme.cardBorderColor, width: 2),
             gradient: LinearGradient(
-                colors: [
-                  Theme.of(context).colorScheme.portfolioCardPrimaryColor,
-                  Theme.of(context).colorScheme.portfolioCardSecondaryColor
-                ],
-                begin: const FractionalOffset(0.0, 0.0),
-                end: const FractionalOffset(1.0, 0.0),
-                stops: [0.0, 1.0],
-                tileMode: TileMode.clamp)),
-        child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SizedBox(
-              width: 400,
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(title,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.black)),
-                    Expanded(
-                      child: Text(subtitle,
+              colors: [
+                Theme.of(context).colorScheme.cardPrimaryColor,
+                Theme.of(context).colorScheme.cardSecondaryColor],
+              begin: const FractionalOffset(0.0, 0.0),
+              end: const FractionalOffset(1.0, 0.0),
+              stops: const [0.0, 1.0],
+            ),
+            borderRadius: BorderRadius.all(Radius.circular(3))
+          ),
+          child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                width: 400,
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(title,
                           style: const TextStyle(
-                              fontStyle: FontStyle.italic,
-                              color: Colors.black)),
-                    ),
-                    const Divider(),
-                    Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Text(text,
-                                style: const TextStyle(color: Colors.black)),
-                          ),
-                          SizedBox(
-                            width: 110,
-                            child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: displayImages),
-                          )
-                        ]),
-                  ]),
-            )));
+                              fontWeight: FontWeight.bold, color: Colors.black)),
+                      Expanded(
+                        child: Text(subtitle,
+                            style: const TextStyle(
+                                fontStyle: FontStyle.italic,
+                                color: Colors.black)),
+                      ),
+                      const Divider(),
+                      Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: RichText(text: createStylizedTextWidget(text))
+                            ),
+                            SizedBox(
+                              width: 110,
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: displayImages),
+                            )
+                          ]),
+                    ]),
+              ))),
+    );
+  }
+
+  /// Parse text to bold keywords
+  /// Return TextSpan with bolded sections
+  TextSpan createStylizedTextWidget(String text) {
+    List<TextSpan> fullText = <TextSpan>[];
+    List<String> boldText = text.split("**");
+    bool bold = false;
+    for (String s in boldText) {
+      fullText.add(TextSpan(text: s, style: bold 
+        ? const TextStyle(fontWeight: FontWeight.bold) 
+        : const TextStyle(fontWeight: FontWeight.normal)));
+      bold = !bold;
+    }
+    return TextSpan(
+      children: fullText
+    );
   }
 }

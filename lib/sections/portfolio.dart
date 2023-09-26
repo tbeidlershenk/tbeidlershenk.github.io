@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:personal_website/widgets/timelineDateCard.dart';
 import 'package:timelines/timelines.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -21,16 +22,14 @@ class _PortfolioState extends State<Portfolio> {
           title: "Lost @ Pitt",
           subtitle: "2nd place @ SteelHacks 2023",
           date: "March 2023",
-          text:
-              "A web application to help students on Pitt's campus retrieve lost items. Built using Flutter, Dart, and Firebase.",
+          text: "A web application to help students on Pitt's campus retrieve lost items. \n\nBuilt using **Flutter, Dart, and Firebase.**",
           images: ["assets/images/lostatpitt.png"],
           link: "https://github.com/Steelhacks-2023/Lost-and-Found-Steelhacks"),
       const TimelineCard(
           title: "Astralnaut",
           subtitle: "Personal Project",
           date: "February 2023",
-          text:
-              "A 2-D space-shooter game developed using the Godot game engine. Programmed in GDScript, created sprites & animations",
+          text: "A 2-D space-shooter game developed using the **Godot** game engine.\n\nProgrammed in **GDScript**, created sprites & animations using pixel art tools.",
           images: [
             "assets/images/astralnaut1.png",
             "assets/images/astralnaut2.png"
@@ -40,8 +39,7 @@ class _PortfolioState extends State<Portfolio> {
           title: "Pool Simulation",
           subtitle: "Personal Project",
           date: "August 2022",
-          text:
-              "A pool (billiards) simulation programmed in Python using the PyGame library.",
+          text: "A pool (billiards) simulation programmed in **Python** using the **PyGame** library.\n\nImplemented linear collisions and frictional forces.",
           images: ["assets/images/poolsimulation.png"],
           link: "https://github.com/tbeidlershenk/Billiards-Simulation")
     ];
@@ -50,9 +48,6 @@ class _PortfolioState extends State<Portfolio> {
       child: Column(
         children: [
           Container(
-            // decoration: BoxDecoration(
-            //   border: Border(bottom: BorderSide(width: 3, color: Colors.black))
-            // ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text("Projects",
@@ -70,14 +65,7 @@ class _PortfolioState extends State<Portfolio> {
               contentsAlign: ContentsAlign.alternating,
               oppositeContentsBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.all(20),
-                child: RichText(
-                    text: TextSpan(
-                        text: projects[index].date,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Theme.of(context)
-                                .colorScheme
-                                .headerSubtitleTextColor))),
+                child: TimelineDateCard(text: projects[index].date),
               ),
               contentsBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.fromLTRB(20, 40, 0, 40),
@@ -102,10 +90,10 @@ class _PortfolioState extends State<Portfolio> {
                       shape: BoxShape.circle,
                       border: Border.all(width: 3),
                       gradient: LinearGradient(colors: [
-                        Theme.of(context).colorScheme.portfolioCardPrimaryColor,
+                        Theme.of(context).colorScheme.cardPrimaryColor,
                         Theme.of(context)
                             .colorScheme
-                            .portfolioCardSecondaryColor
+                            .cardSecondaryColor
                       ])),
                   child: IconButton(
                       color: Colors.purple,

@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 import '../appcolorscheme.dart';
 import '../widgets/timelineCard.dart';
+import '../widgets/timelineDateCard.dart';
 
 class Work extends StatefulWidget {
   const Work({super.key});
@@ -19,18 +20,16 @@ class _WorkState extends State<Work> {
     List<TimelineCard> projects = [
       const TimelineCard(
           title: "SWE Intern",
-          subtitle: "Dynamics Inc",
-          date: "Pittsburgh, PA\nMay - August 2023",
-          text:
-              "Planned, developed and tested an internal database application using WPF and .Net frameworks, C# and MySQL.",
+          subtitle: "Dynamics Inc - Pittsburgh, PA",
+          date: "May - August 2023",
+          text: "Planned, developed and tested an internal database application using **WPF** and **.Net** frameworks, **C#** and **MySQL**.\n\nAdditionally, worked on other tickets from the team's backlog.",
           images: ["assets/images/dynamicsinc.webp"],
           link: ""),
       const TimelineCard(
           title: "Undergraduate Teaching Assistant",
-          subtitle: "University of Pittsburgh",
-          date: "Pittsburgh, PA\nAugust 2022 - present",
-          text:
-              "Lead recitation sections, facilitating brief lecture content reviews and helping students with assignments for the following classes:\nCS 11 - Intro to Python\nCS 401 - Intermediate Programming in Java",
+          subtitle: "University of Pittsburgh - Pittsburgh, PA",
+          date: "August 2022 - present",
+          text: "Lead recitation sections, facilitated brief lecture content reviews and helped students with assignments.\n\n**CS 11** - Intro to Python\n**CS 401** - Programming in Java\n**CS 449** - Systems Software",
           images: ["assets/images/pitt.jpg"],
           link: ""),
     ];
@@ -54,17 +53,7 @@ class _WorkState extends State<Work> {
             theme: TimelineThemeData(),
             builder: TimelineTileBuilder.connected(
               contentsAlign: ContentsAlign.alternating,
-              oppositeContentsBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.all(20),
-                child: RichText(
-                    text: TextSpan(
-                        text: projects[index].date,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Theme.of(context)
-                                .colorScheme
-                                .headerSubtitleTextColor))),
-              ),
+              oppositeContentsBuilder: (context, index) => TimelineDateCard(text: projects[index].date),
               contentsBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.fromLTRB(20, 40, 0, 40),
                 child: projects[index],
@@ -90,10 +79,10 @@ class _WorkState extends State<Work> {
                         gradient: LinearGradient(colors: [
                           Theme.of(context)
                               .colorScheme
-                              .portfolioCardPrimaryColor,
+                              .cardPrimaryColor,
                           Theme.of(context)
                               .colorScheme
-                              .portfolioCardSecondaryColor
+                              .cardSecondaryColor
                         ])),
                     child: Icon(
                       size: 35,
