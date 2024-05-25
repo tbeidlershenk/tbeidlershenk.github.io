@@ -45078,7 +45078,7 @@ j(a){var s=this,r=A.a([s.a.j(0)],t.s),q=s.d!==B.ju
 if(q)r.push(s.d.j(0))
 r.push(B.G.j(0))
 r.push("scale "+B.h.Y(1,1))
-r.push("opacity "+B.c.Y(s.y,1))
+r.push("opacity "+B.h.Y(s.y,1))
 r.push(B.c7.j(0))
 return"DecorationImage("+B.b.bC(r,", ")+")"},
 gda(){return this.a},
@@ -62245,12 +62245,12 @@ $S:0}
 A.mU.prototype={
 J(a){var s=null
 t.co.a(A.ad(a).c.k(0,A.ba(t.lo))).toString
-return A.acy(A.acB(A.lY(B.dG,A.a([A.f8(s,s,B.v,s,new A.cI(s,A.a71(B.jt,new A.iT("assets/images/background.jpg",s,s),0.4),s,s,s,s,B.ap),s,s,s,s),this.c,new A.t1(s),new A.rv(s)],t.p),B.aB,B.bS)))}}
+return A.acy(A.acB(A.lY(B.dG,A.a([A.f8(s,s,B.v,s,new A.cI(s,A.a71(B.jt,new A.iT("assets/images/background1.jpg",s,s),1),s,s,s,s,B.ap),s,s,s,s),this.c,new A.t1(s),new A.rv(s)],t.p),B.aB,B.bS)))}}
 A.Bo.prototype={
 J(a){var s,r=null,q=t.co.a(A.ad(a).c.k(0,A.ba(t.lo)))
 q.toString
 s=t.p
-return A.acy(A.acB(A.lY(B.dG,A.a([A.f8(r,r,B.v,r,new A.cI(r,A.a71(B.jt,new A.iT("assets/images/background.jpg",r,r),1),r,r,r,r,B.ap),r,r,r,r),A.iX(A.qg(A.a([A.f8(r,r,B.v,r,new A.cI(r,A.a71(B.wU,new A.iT("assets/images/headshot.jpg",r,r),1),r,r,r,r,B.fE),300,r,r,300),A.es(r,25,r),new A.cr(B.by,A.fw("Tobias Beidler-Shenk",r,q.d),r),new A.cr(B.by,A.fw("CS & Math | University of Pittsburgh",r,q.e),r),new A.cr(B.by,A.fw("tbeidlershenk@gmail.com",r,q.f),r)],s),B.aq,B.dc,B.aP),r,r),new A.t1(r),new A.rv(r)],s),B.aB,B.bS)))}}
+return A.acy(A.acB(A.lY(B.dG,A.a([A.f8(r,r,B.v,r,new A.cI(r,A.a71(B.jt,new A.iT("assets/images/background2.jpg",r,r),1),r,r,r,r,B.ap),r,r,r,r),A.iX(A.qg(A.a([A.f8(r,r,B.v,r,new A.cI(r,A.a71(B.wU,new A.iT("assets/images/headshot.jpg",r,r),1),r,r,r,r,B.fE),300,r,r,300),A.es(r,25,r),new A.cr(B.by,A.fw("Tobias Beidler-Shenk",r,q.d),r),new A.cr(B.by,A.fw("CS & Math | University of Pittsburgh",r,q.e),r),new A.cr(B.by,A.fw("tbeidlershenk@gmail.com",r,q.f),r)],s),B.aq,B.dc,B.aP),r,r),new A.t1(r),new A.rv(r)],s),B.aB,B.bS)))}}
 A.pR.prototype={
 ac(){return new A.yT(B.k)}}
 A.yT.prototype={
