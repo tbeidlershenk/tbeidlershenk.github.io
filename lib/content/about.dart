@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:personal_website/resources/themes.dart';
 import 'package:personal_website/util.dart';

@@ -16,29 +16,29 @@ class AppTheme extends ThemeExtension<AppTheme> {
   static Color error = const Color.fromARGB(255, 255, 43, 43);
 
   // Global text themes
-  final TextStyle darkTitleStyle = GoogleFonts.robotoSlab(textStyle: TextStyle(
-      color: veryDark,
-      fontWeight: FontWeight.bold,
-      fontFeatures: [],
-      fontSize: 24));
-  final TextStyle darkSubtitleStyle = GoogleFonts.robotoSlab(textStyle: TextStyle(
-      color: veryDark,
-      fontWeight: FontWeight.w400,
-      fontSize: 18));
-  final TextStyle darkTextBlockStyle = GoogleFonts.robotoSlab(textStyle: TextStyle(
-    wordSpacing: 4,
-      color: veryDark,
-      fontWeight: FontWeight.w400,
-      fontSize: 18));
-  final TextStyle lightTitleStyle = GoogleFonts.robotoSlab(textStyle: TextStyle(
-      color: light,
-      fontWeight: FontWeight.bold,
-      fontSize: 18));
-  final TextStyle lightSubtitleStyle = GoogleFonts.robotoSlab(textStyle: TextStyle(
-      color: light,
-      fontWeight: FontWeight.bold,
-      fontSize: 16));
-  final TextStyle lightRegularStyle = GoogleFonts.robotoSlab(textStyle: TextStyle(color: light,  fontSize: 14));
+  final TextStyle darkTitleStyle = GoogleFonts.robotoSlab(
+      textStyle: TextStyle(
+          color: veryDark,
+          fontWeight: FontWeight.bold,
+          fontFeatures: [],
+          fontSize: 24));
+  final TextStyle darkSubtitleStyle = GoogleFonts.robotoSlab(
+      textStyle: TextStyle(
+          color: veryDark, fontWeight: FontWeight.w400, fontSize: 18));
+  final TextStyle darkTextBlockStyle = GoogleFonts.robotoSlab(
+      textStyle: TextStyle(
+          wordSpacing: 4,
+          color: veryDark,
+          fontWeight: FontWeight.w400,
+          fontSize: 18));
+  final TextStyle lightTitleStyle = GoogleFonts.robotoSlab(
+      textStyle:
+          TextStyle(color: light, fontWeight: FontWeight.bold, fontSize: 18));
+  final TextStyle lightSubtitleStyle = GoogleFonts.robotoSlab(
+      textStyle:
+          TextStyle(color: light, fontWeight: FontWeight.bold, fontSize: 16));
+  final TextStyle lightRegularStyle =
+      GoogleFonts.robotoSlab(textStyle: TextStyle(color: light, fontSize: 14));
 
   @override
   AppTheme copyWith() => null!;

@@ -1,10 +1,8 @@
-import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:personal_website/resources/themes.dart';
 import 'package:personal_website/widgets/content.dart';
 import 'package:personal_website/data.dart' as data;
-import 'package:swipeable_cards_stack/swipeable_cards_stack.dart';
 
 class Projects extends StatefulWidget {
   Projects({

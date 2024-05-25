@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:personal_website/resources/themes.dart';
 import 'package:personal_website/widgets/link_options.dart';
 import 'package:personal_website/widgets/navigation_options.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({
