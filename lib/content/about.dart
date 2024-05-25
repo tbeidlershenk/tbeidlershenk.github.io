@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personal_website/resources/themes.dart';
 import 'package:personal_website/util.dart';
-
 import '../widgets/image_slideshow.dart';
 
 class About extends StatelessWidget {

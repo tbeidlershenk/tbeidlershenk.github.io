@@ -381,14 +381,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.1"
-  timelines:
-    dependency: "direct main"
-    description:
-      name: timelines
-      sha256: "40214f5ab772ff45459cb8c15e5f60505a6828af0c0eb1eec6f29ed911a4c1c5"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.1.0"
   typed_data:
     dependency: transitive
     description:
@@ -470,13 +462,13 @@ packages:
     source: hosted
     version: "2.1.4"
   web:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: web
-      sha256: afe077240a270dcfd2aafe77602b4113645af95d0ad31128cc02bce5ac5d5152
+      sha256: "4188706108906f002b3a293509234588823c8c979dc83304e229ff400c996b05"
       url: "https://pub.dev"
     source: hosted
-    version: "0.3.0"
+    version: "0.4.2"
   win32:
     dependency: transitive
     description:

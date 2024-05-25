@@ -37,10 +37,10 @@ dependencies:
   flutter_riverpod: ^2.3.6
   shared_preferences: ^2.2.0
   google_fonts: 5.1.0
-  timelines: ^0.1.0
   flutter_emoji: ">= 2.0.0"
   url_launcher: ^6.1.8
   font_awesome_flutter: ">= 4.7.0"
+  web: ^0.4.0
 
 dev_dependencies:
   flutter_test:
@@ -52,6 +52,9 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+
+dependency_overrides:
+  web: ^0.4.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -65,7 +68,6 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/introText.json
     - assets/images/
     - assets/backgrounds/
 
