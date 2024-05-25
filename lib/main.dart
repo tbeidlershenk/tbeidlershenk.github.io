@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:personal_website/sections/links.dart';
-import 'package:personal_website/sections/mainHeader.dart';
-import 'package:personal_website/sections/portfolio.dart';
-import 'package:personal_website/sections/work.dart';
-import 'package:personal_website/widgets/toolbar.dart';
-import 'package:flutter_polls/flutter_polls.dart';
-import 'appcolorscheme.dart';
-import 'sections/intro.dart';
+import 'package:personal_website/content/about.dart';
+import 'package:personal_website/content/projects.dart';
+import 'package:personal_website/content/work.dart';
+import 'package:personal_website/landing_page.dart';
+import 'package:personal_website/resources/route.dart';
+import 'package:personal_website/resources/themes.dart';
+import 'package:personal_website/content_page.dart';
 
 // Main function
-void main() {
-  runApp(const App());
-}
+void main() => runApp(const App());
 
 // Material App
 
@@ -28,104 +25,24 @@ class App extends StatefulWidget {
 class AppState extends State<App> {
   ThemeMode themeMode = ThemeMode.light;
 
+  static Route<dynamic> _onGenerateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case '/': return FadeInRoute(page: LandingPage(), routeName: settings.name);
+      case '/about': return FadeInRoute(page: ContentPage(body: About()), routeName: settings.name);
+      case '/work': return FadeInRoute(page: ContentPage(body: Work()), routeName: settings.name);
+      case '/projects': return FadeInRoute(page: ContentPage(body: Projects()), routeName: settings.name);
+    }
+    throw UnsupportedError('Unknown route: ${settings.name}');
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Tobias Beidler-Shenk | CS Student',
-      theme: ThemeData(
-        colorScheme: const ColorScheme.light(),
-      ),
-      darkTheme: ThemeData(
-        colorScheme: const ColorScheme.dark(),
-      ),
+      theme: AppTheme.getTheme(),
       themeMode: themeMode,
       debugShowCheckedModeBanner: false,
-      home: const MainPage(),
+      onGenerateRoute: _onGenerateRoute,
     );
-  }
-
-  // Change the theme
-  void changeTheme() {
-    setState(() {
-      themeMode =
-          themeMode == ThemeMode.light ? ThemeMode.dark : ThemeMode.light;
-    });
-  }
-}
-
-// Main Page layout
-
-class MainPage extends StatefulWidget {
-  const MainPage({super.key});
-
-  @override
-  State<MainPage> createState() => MainPageState();
-}
-
-class MainPageState extends State<MainPage> {
-  @override
-  Widget build(BuildContext context) {
-    double dividerIndent = (MediaQuery.of(context).size.width / 2.5);
-    return Scaffold(
-        body: Stack(children: [
-      Center(
-          child: SingleChildScrollView(
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                repeat: ImageRepeat.repeat,
-                opacity: 0.25,
-                image: Theme.of(context).colorScheme.backgroundImage),
-          ),
-          child: Column(
-            children: <Widget>[
-              MainHeader(),
-              Divider(
-                  thickness: 3,
-                  indent: dividerIndent,
-                  endIndent: dividerIndent),
-              SizedBox(height: 20),
-              Intro(),
-              SizedBox(height: 20),
-              Divider(
-                  thickness: 3,
-                  indent: dividerIndent,
-                  endIndent: dividerIndent),
-              SizedBox(height: 20),
-              Portfolio(),
-              SizedBox(height: 20),
-              Divider(
-                  thickness: 3,
-                  indent: dividerIndent,
-                  endIndent: dividerIndent),
-              SizedBox(height: 20),
-              Work(),
-              SizedBox(height: 20),
-              Divider(
-                  thickness: 3,
-                  indent: dividerIndent,
-                  endIndent: dividerIndent),
-              Links()
-            ],
-          ),
-        ),
-      )),
-      const Align(alignment: Alignment.topLeft, child: Toolbar()),
-      // Align(
-      //   alignment: Alignment.bottomRight,
-      //   child: Padding(
-      //     padding: const EdgeInsets.all(10.0),
-      //     child: SizedBox(
-      //       width: MediaQuery.of(context).size.width * 0.1,
-      //       height: MediaQuery.of(context).size.height * 0.2,
-      //       child: FlutterPolls(
-      //         onVoted: (PollOption pollOption, int newTotalVotes) => handlePollVote(pollOption, newTotalVotes), 
-      //         pollId: '', 
-      //         pollOptions: [PollOption(title: Text("Option 1"), votes: 0), PollOption(title: Text("Option 2"), votes: 0)], 
-      //         pollTitle: Text(""),)),
-      //   ),
-      // )
-        
-    ]));
   }
 }
