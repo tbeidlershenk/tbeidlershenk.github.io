@@ -17,9 +17,16 @@ jobs:
         with:
           channel: 'stable'
 
+      - run: flutter doctor
+      - run: flutter channel stable
+      - run: flutter config --enable-web
+      - run: flutter upgrade
+      - run: flutter pub cache repair
       - run: flutter clean
+      - run: flutter pub cache clean
+      - run: flutter upgrade
       - run: flutter pub get
-      - run: flutter build web --release --no-tree-shake-icons
+      - run: flutter build web --web-renderer html --release --no-tree-shake-icons
 
       # Web deploy now is contained in build/web directory
       - run: |
