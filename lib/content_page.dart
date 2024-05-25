@@ -3,11 +3,8 @@ import 'package:personal_website/resources/themes.dart';
 import 'package:personal_website/widgets/link_options.dart';
 import 'package:personal_website/widgets/navigation_options.dart';
 
-class ContentPage extends StatelessWidget {  
-  const ContentPage({
-    super.key,
-    required this.body
-  });
+class ContentPage extends StatelessWidget {
+  const ContentPage({super.key, required this.body});
   final Widget body;
 
   @override
@@ -20,9 +17,9 @@ class ContentPage extends StatelessWidget {
               decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   image: DecorationImage(
-                      opacity: 0.4,
+                      opacity: 1,
                       fit: BoxFit.cover,
-                      image: AssetImage("assets/images/background.jpg")))),
+                      image: AssetImage("assets/images/background1.jpg")))),
           body,
           NavigationOptions(),
           LinkOptions()

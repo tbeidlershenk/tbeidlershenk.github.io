@@ -19,7 +19,7 @@ class LandingPage extends StatelessWidget {
                 shape: BoxShape.rectangle,
                 image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage("assets/images/background.jpg")))),
+                    image: AssetImage("assets/images/background2.jpg")))),
         Center(
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
