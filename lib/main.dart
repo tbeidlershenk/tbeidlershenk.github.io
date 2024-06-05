@@ -27,10 +27,17 @@ class AppState extends State<App> {
 
   static Route<dynamic> _onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case '/': return FadeInRoute(page: LandingPage(), routeName: settings.name);
-      case '/about': return FadeInRoute(page: ContentPage(body: About()), routeName: settings.name);
-      case '/work': return FadeInRoute(page: ContentPage(body: Work()), routeName: settings.name);
-      case '/projects': return FadeInRoute(page: ContentPage(body: Projects()), routeName: settings.name);
+      case '/':
+        return FadeInRoute(page: const LandingPage(), routeName: settings.name);
+      case '/about':
+        return FadeInRoute(
+            page: const ContentPage(body: About()), routeName: settings.name);
+      case '/work':
+        return FadeInRoute(
+            page: ContentPage(body: Work()), routeName: settings.name);
+      case '/projects':
+        return FadeInRoute(
+            page: ContentPage(body: Projects()), routeName: settings.name);
     }
     throw UnsupportedError('Unknown route: ${settings.name}');
   }

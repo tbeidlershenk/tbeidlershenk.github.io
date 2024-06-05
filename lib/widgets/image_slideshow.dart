@@ -1,16 +1,14 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:personal_website/resources/themes.dart';
 
 class ImageSlideshow extends StatefulWidget {
-  ImageSlideshow(
+  const ImageSlideshow(
       {super.key,
       required this.paths,
       required this.height,
       required this.width});
 
-  List<String> paths;
+  final List<String> paths;
   final double height;
   final double width;
 
@@ -26,23 +24,12 @@ class ImageSlideshowState extends State<ImageSlideshow> {
 
   @override
   void initState() {
-    print("here");
-
     super.initState();
-    print(widget.paths);
-    if (widget.paths.length <= 1) {
-      return;
-    }
+    if (widget.paths.length <= 1) return;
     _timer = Timer.periodic(const Duration(seconds: 5), (timer) async {
-      if (mounted) {
-        setState(() {
-          if (_currentIndex + 1 == _images.length) {
-            _currentIndex = 0;
-          } else {
-            _currentIndex = _currentIndex + 1;
-          }
-        });
-      }
+      if (!mounted) return;
+      setState(() => _currentIndex =
+          _currentIndex + 1 == _images.length ? 0 : _currentIndex + 1);
     });
   }
 
@@ -61,7 +48,6 @@ class ImageSlideshowState extends State<ImageSlideshow> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context).extension<AppTheme>()!;
     int i = 0;
     _images = [];
     widget.paths
@@ -70,7 +56,7 @@ class ImageSlideshowState extends State<ImageSlideshow> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
+          SizedBox(
               width: widget.width,
               height: widget.height,
               child: AnimatedSwitcher(

@@ -8,37 +8,37 @@ import 'package:google_fonts/google_fonts.dart';
 @immutable
 class AppTheme extends ThemeExtension<AppTheme> {
   // Global color theme
-  static Color light = Color.fromARGB(255, 255, 255, 255);
+  static Color light = const Color.fromARGB(255, 255, 255, 255);
   static Color medium = const Color.fromARGB(255, 165, 208, 189);
   static Color dark = const Color.fromARGB(255, 0, 123, 78);
-  static Color veryDark = Color.fromARGB(255, 0, 0, 0);
+  static Color veryDark = const Color.fromARGB(255, 0, 0, 0);
   static Color background = const Color.fromARGB(255, 255, 255, 255);
   static Color error = const Color.fromARGB(255, 255, 43, 43);
 
   // Global text themes
-  final TextStyle darkTitleStyle = GoogleFonts.robotoSlab(
+  final TextStyle darkTitleStyle = GoogleFonts.mulish(
       textStyle: TextStyle(
           color: veryDark,
           fontWeight: FontWeight.bold,
-          fontFeatures: [],
+          fontFeatures: const [],
           fontSize: 24));
-  final TextStyle darkSubtitleStyle = GoogleFonts.robotoSlab(
+  final TextStyle darkSubtitleStyle = GoogleFonts.mulish(
       textStyle: TextStyle(
-          color: veryDark, fontWeight: FontWeight.w400, fontSize: 18));
-  final TextStyle darkTextBlockStyle = GoogleFonts.robotoSlab(
+          color: veryDark, fontWeight: FontWeight.w500, fontSize: 18));
+  final TextStyle darkTextBlockStyle = GoogleFonts.mulish(
       textStyle: TextStyle(
           wordSpacing: 4,
           color: veryDark,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w500,
           fontSize: 18));
-  final TextStyle lightTitleStyle = GoogleFonts.robotoSlab(
+  final TextStyle lightTitleStyle = GoogleFonts.mulish(
       textStyle:
           TextStyle(color: light, fontWeight: FontWeight.bold, fontSize: 18));
-  final TextStyle lightSubtitleStyle = GoogleFonts.robotoSlab(
+  final TextStyle lightSubtitleStyle = GoogleFonts.mulish(
       textStyle:
           TextStyle(color: light, fontWeight: FontWeight.bold, fontSize: 16));
   final TextStyle lightRegularStyle =
-      GoogleFonts.robotoSlab(textStyle: TextStyle(color: light, fontSize: 14));
+      GoogleFonts.mulish(textStyle: TextStyle(color: light, fontSize: 14));
 
   @override
   AppTheme copyWith() => null!;

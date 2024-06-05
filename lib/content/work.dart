@@ -26,14 +26,19 @@ class ProjectsState extends State<Work> {
   @override
   Widget build(BuildContext context) {
     Content selectedCard = widget.workContent[index];
-    final theme = Theme.of(context).extension<AppTheme>()!;
     return Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
       IconButton(
           icon: const FaIcon(FontAwesomeIcons.angleLeft),
           color: AppTheme.veryDark,
           onPressed: prev),
-      AnimatedSwitcher(
-          duration: const Duration(milliseconds: 1000), child: selectedCard),
+      Container(
+        decoration: BoxDecoration(
+            color: const Color.fromRGBO(255, 255, 255, 0.7),
+            borderRadius: BorderRadius.circular(20)),
+        padding: const EdgeInsets.all(30),
+        child: AnimatedSwitcher(
+            duration: const Duration(milliseconds: 1000), child: selectedCard),
+      ),
       IconButton(
           icon: const FaIcon(FontAwesomeIcons.angleRight),
           color: AppTheme.veryDark,

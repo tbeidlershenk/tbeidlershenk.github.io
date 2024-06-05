@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Text getMarkdownText(String text, TextStyle baseStyle) {
+TextSpan getMarkdownText(String text, TextStyle baseStyle) {
   List<String> parts = text.split("**");
   List<TextSpan> textElements = [];
   bool bold = false;
@@ -13,5 +13,5 @@ Text getMarkdownText(String text, TextStyle baseStyle) {
     textElements.add(text);
     bold = !bold;
   }
-  return Text.rich(TextSpan(children: textElements));
+  return TextSpan(children: textElements);
 }

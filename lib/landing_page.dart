@@ -15,7 +15,7 @@ class LandingPage extends StatelessWidget {
         body: SelectionArea(
       child: Stack(children: [
         Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 shape: BoxShape.rectangle,
                 image: DecorationImage(
                     fit: BoxFit.cover,
@@ -28,13 +28,13 @@ class LandingPage extends StatelessWidget {
                 Container(
                     width: 300,
                     height: 300,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         // borderRadius: BorderRadius.circular(15),
                         image: DecorationImage(
                             fit: BoxFit.fitWidth,
                             image: AssetImage("assets/images/headshot.jpg")))),
-                SizedBox(height: 25),
+                const SizedBox(height: 25),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text("Tobias Beidler-Shenk",
@@ -52,8 +52,8 @@ class LandingPage extends StatelessWidget {
                 )
               ]),
         ),
-        NavigationOptions(),
-        LinkOptions()
+        const NavigationOptions(),
+        const LinkOptions()
       ]),
     ));
   }

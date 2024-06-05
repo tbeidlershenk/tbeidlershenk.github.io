@@ -30,9 +30,9 @@ class Content extends StatelessWidget {
     final width = MediaQuery.of(context).size.width / 4;
 
     TextSpan title() =>
-        TextSpan(text: "${this.title}", style: theme.darkTitleStyle);
+        TextSpan(text: this.title, style: theme.darkTitleStyle);
     InlineSpan githubLink() => this.githubLink == null
-        ? TextSpan()
+        ? const TextSpan()
         : WidgetSpan(
             child: IconButton(
                 icon: const FaIcon(FontAwesomeIcons.link),
@@ -40,14 +40,13 @@ class Content extends StatelessWidget {
                 color: AppTheme.veryDark,
                 onPressed: () => launchUrlString(this.githubLink!)));
     TextSpan subtitle() => this.subtitle == null
-        ? TextSpan(text: "")
+        ? const TextSpan(text: "")
         : TextSpan(text: "\n${this.subtitle}", style: theme.darkSubtitleStyle);
     TextSpan dates() =>
-        TextSpan(text: "${this.dates}", style: theme.darkSubtitleStyle);
-    TextSpan newline() => TextSpan(text: "\n");
+        TextSpan(text: this.dates, style: theme.darkSubtitleStyle);
+    TextSpan newline() => const TextSpan(text: "\n");
     InlineSpan description() =>
-        getMarkdownText(this.description, theme.darkTextBlockStyle).textSpan ??
-        TextSpan();
+        getMarkdownText(this.description, theme.darkTextBlockStyle);
 
     Widget left() {
       List<InlineSpan> spans = [
@@ -73,8 +72,9 @@ class Content extends StatelessWidget {
     Widget right() =>
         ImageSlideshow(paths: imagePaths, width: 200, height: 200);
 
-    return Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [left(), SizedBox(width: width / 6), right()]);
+    return IntrinsicHeight(
+        child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [left(), SizedBox(width: width / 6), right()]));
   }
 }
