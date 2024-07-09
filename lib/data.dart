@@ -15,7 +15,7 @@ final List<Content> projects = [
       subtitle: "CS-1660 Final Project",
       dates: "Feb - Apr 2024",
       description:
-          """A movie recommendation site that uses **Letterboxd** watch history of a group to deliver high quality recommendations using a **KNN clustering** algorithm. \nUtilized **GitHub Actions** to automatically deploy to **GCP services**.""",
+          """Delivers movie recommendations using a **KNN clustering algorithm**\n\nDriven using data from a group of users on Letterboxd, a film review site\n\nUtilized **GitHub Actions** to automatically deploy to **GCP services**""",
       imagePaths: ["assets/images/logo.png", "assets/images/cinect.png"],
       skills: ["ReactJS", "Flask", "Firebase", "Docker", "GCP"],
       githubLink: "https://github.com/KavinSankar123/Cinect"),
@@ -38,9 +38,9 @@ final List<Content> work = [
       subtitle: "QA Automation Intern",
       dates: "May 2024 - present",
       description:
-          """Wrote **automation scripts** to test functionality of storefront pages in **Groovy** utilizing **Selenium Webdriver**.\n\n**Scheduled** and **monitored** nightly runs of automated tests.\n\nCurrently working in this role.""",
+          """Wrote **automation scripts** to test storefront and admin pages, using **Groovy and Selenium**\n\nWrote **SQL queries** to fetch appropriate test data from database tables\n\nWrote **unit tests** for shared classes used in automation scripts\n\nMonitored nightly runs of automated tests, communicating with developers when bugs arose""",
       imagePaths: ["assets/images/webstaurantstore.png"],
-      skills: ["Selenium", "Groovy", "Java", "Azure DevOps"]),
+      skills: ["Selenium", "Groovy", "Java", "SQL", "Azure DevOps"]),
   const Content(
       title: "Innovative Systems",
       subtitle: "Software Engineering Intern",
