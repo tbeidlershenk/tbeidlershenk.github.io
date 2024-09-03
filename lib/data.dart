@@ -46,7 +46,7 @@ final List<Content> work = [
       subtitle: "Software Engineering Intern",
       dates: "Jan - May 2024",
       description:
-          """Built a **multi-threaded ETL tool** for transformation & validation of **1M+ records**, supporting multiple file formats.\n\nDeveloped an API to extract core functionality into a shared library, with **unit & integration tests.**\n\nBuilt a **plugin system** for custom processing operations to be dynamically loaded & executed.""",
+          """Built a **multi-threaded ETL tool** for transformation & validation of records, supporting multiple file formats.\n\nDeveloped an API to extract core functionality into a shared library, with **unit & integration tests.**\n\nBuilt a **plugin system** for custom processing operations to be dynamically loaded & executed.""",
       imagePaths: ["assets/images/innovativesystems.webp"],
       skills: ["C#", ".Net", "Jira"]),
   const Content(
