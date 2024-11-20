@@ -17,7 +17,7 @@ social: true # includes social icons at the bottom of the page
 
 I'm Tobias and I am an aspiring **entrepreneur & software developer** out of Pittsburgh, PA. I have a passion for developing unique solutions with software, and I am currently pursuing a career in **backend development**.
 
-Currently, I am a senior at the **University of Pittsburgh**, majoring in **Computer Science** with a minor in **Mathematics**, with an anticipated graduation date of May 2025. I'm training for the Philadelphia and Pittsburgh marathons, and also enjoy disc golf, climbing, hiking in my free time. 
+Currently, I am a senior at the **University of Pittsburgh**, majoring in **Computer Science** with a minor in **Mathematics**, with an anticipated graduation date of May 2025. I'm training for the Philadelphia and Pittsburgh marathons, and also enjoy disc golf, climbing, and hiking in my free time. 
 
 Reach out to me by email at **[tbeidlershenk@gmail.com](mailto:tbeidlershenk@gmail.com)**.
 

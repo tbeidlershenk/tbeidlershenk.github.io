@@ -42,6 +42,13 @@ layout: default
                 {{ entry.contents }}
               {% endif %}
             </div>
+            {% if entry.tags %}
+              <div class="tags mt-3">
+                {% for tag in entry.tags %}
+                  <img alt="Static Badge" src="https://img.shields.io/badge/{{ tag | uri_escape }}-blue">
+                {% endfor %}
+              </div>
+            {% endif %}
           </div>
         {% endfor %}
       </div>

@@ -25,6 +25,11 @@
               </li>
             {% endfor %}
           </ul>
+          <div class="tags mt-3 d-flex justify-content-end">
+              {% for tag in content.tags %}
+                  <img alt="Static Badge" src="https://img.shields.io/badge/{{ tag | uri_escape }}-darkblue?logo={{ tag | uri_escape }}&logoColor=fff)" class="mr-2">
+              {% endfor %}
+          </div>
         </div>
       </div>
     </li>
