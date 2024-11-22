@@ -45,7 +45,7 @@ layout: default
             {% if entry.tags %}
               <div class="tags mt-3">
                 {% for tag in entry.tags %}
-                  <img alt="Static Badge" src="https://img.shields.io/badge/{{ tag | uri_escape }}-blue">
+                  <img alt="Static Badge" src="https://img.shields.io/badge/{{ tag | uri_escape }}-blue?style=for-the-badge" style="height: 22px; width: auto;">
                 {% endfor %}
               </div>
             {% endif %}
