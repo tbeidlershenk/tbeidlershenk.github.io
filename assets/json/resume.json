@@ -92,17 +92,19 @@
   ],
   "projects": [
     {
-      "name": "PDGA Round Rating Calculator",
-      "summary": "A discord bot that calculates PDGA round ratings for disc golf course layouts.",
+      "name": "HotRound",
+      "summary": "Aggregates PDGA sanctioned tournament data to calculate disc golf round ratings for any course & layout.",
       "startDate": "2024-09",
       "endDate": "present",
       "highlights": [
-        "Scraped data from 500k rounds from sanctioned PDGA events.",
-        "Built a discord bot to extrapolate round ratings for a given course layout.",
-        "Implemented fuzzy matching of course layouts using hole distance & total par."
+        "Used Selenium to scrape data from sanctioned PDGA tournaments",
+        "Built a ReactJS + Flask application to display round ratings & statistics.",
+        "Built a discord bot to extrapolate round ratings for any score at a given course layout.",
+        "Implemented clustering of course layouts using hole distances & total par with SciPy.",
+        "Deployed applications using Docker & Heroku."
       ],
-      "url": "https://github.com/tbeidlershenk/pdga-rating-bot",
-      "tags": ["Python", "Discord.py", "Selenium", "BeautifulSoup"]
+      "url": "https://github.com/tbeidlershenk/hotround",
+      "tags": ["Python", "Flask", "Discord.py", "SciPy", "Selenium", "React", "MUI", "Heroku", "Docker"]
     },
     {
       "name": "Cinect",
@@ -115,7 +117,7 @@
         "Utilized GitHub Actions to automatically deploy to GCP services."
       ],
       "url": "https://github.com/tbeidlershenk/cinect",
-      "tags": ["ReactJS", "Flask", "Firebase", "GCP", "GitHub Actions"]
+      "tags": ["React", "Flask", "Firebase", "GCP", "GitHub Actions"]
     },
     {
       "name": "Lost @ Pitt",
