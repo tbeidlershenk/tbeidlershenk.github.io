@@ -1,14 +1,22 @@
 {% if site.enable_google_analytics %}
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      window.dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', '{{ site.google_analytics }}');
-  </script>
+  <!-- wireboard tag -->
+<script type="text/javascript">
+  ;(function(w,i,r,e,b,oar,d){if(!w[b]){w.WireBoardNamespace=w.WireBoardNamespace||[];
+  w.WireBoardNamespace.push(b);w[b]=function(){(w[b].q=w[b].q||[]).push(arguments)};
+  w[b].q=w[b].q||[];oar=i.createElement(r);d=i.getElementsByTagName(r)[0];oar.async=1;
+  oar.src=e;d.parentNode.insertBefore(oar,d)}}(window,document,"script","https://static.wireboard.io/wireboard.js","wireboard"));
+  wireboard('newTracker', 'wb', 'pipeline-0.collector.wireboard.io', {
+      appId: 'bkmaGaJY',
+      forceSecureTracker: true,
+      contexts: {
+        performanceTiming: true,
+      }
+  });
+  window.wireboard('enableActivityTracking', 5, 10);
+  var customContext=[{schema:'wb:io.wireboard/publisher',data:{publisher:'bfa0ce8d-3544-4799-83d4-4ef4f269ca4b'}}]
+  window.wireboard('trackPageView', null, customContext);
+</script>
 {% endif %}
 {% if site.enable_cronitor_analytics %}
   <!-- Cronitor RUM -->
